@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useFadeIn } from "@/hooks/use-fade-in"
 
 const skillCategories = [
   {
@@ -182,9 +183,10 @@ const skillCategories = [
 export function Skills() {
   const [activeIdx, setActiveIdx] = useState(0)
   const active = skillCategories[activeIdx]
+  const { ref, isVisible } = useFadeIn()
 
   return (
-    <section id="skills" className="py-[clamp(4rem,9vw,8rem)] border-b border-rule">
+    <section ref={ref as React.RefObject<HTMLElement>} id="skills" className={`py-[clamp(4rem,9vw,8rem)] border-b border-rule section-reveal ${isVisible ? "is-visible" : ""}`}>
       <div className="max-w-[1280px] mx-auto px-[clamp(1.5rem,5vw,4.5rem)]">
         {/* Section header */}
         <div className="grid grid-cols-[auto_1fr] gap-8 items-end pb-12 border-b border-rule mb-[clamp(2.5rem,5vw,4rem)]">

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useFadeIn } from "@/hooks/use-fade-in"
 
 const philosophies = [
   {
@@ -119,9 +120,10 @@ CREATE TABLE reservations (
 export function Philosophy() {
   const [activeIdx, setActiveIdx] = useState(0)
   const detail = philosophies[activeIdx]
+  const { ref, isVisible } = useFadeIn()
 
   return (
-    <section id="philosophy" className="py-[clamp(4rem,9vw,8rem)] bg-ink text-paper">
+    <section ref={ref as React.RefObject<HTMLElement>} id="philosophy" className={`py-[clamp(4rem,9vw,8rem)] bg-ink text-paper section-reveal ${isVisible ? "is-visible" : ""}`}>
       <div className="max-w-[1280px] mx-auto px-[clamp(1.5rem,5vw,4.5rem)]">
         {/* Section header */}
         <div className="grid grid-cols-[auto_1fr] gap-8 items-end pb-12 border-b border-ink2 mb-[clamp(2.5rem,5vw,4rem)]">

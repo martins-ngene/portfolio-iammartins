@@ -1,3 +1,7 @@
+"use client"
+
+import { useFadeIn } from "@/hooks/use-fade-in"
+
 const experiences = [
   {
     period: "Mar 2025 — Present",
@@ -92,8 +96,10 @@ const experiences = [
 ]
 
 export function Experience() {
+  const { ref, isVisible } = useFadeIn()
+
   return (
-    <section id="experience" className="py-[clamp(4rem,9vw,8rem)] border-b border-rule">
+    <section ref={ref as React.RefObject<HTMLElement>} id="experience" className={`py-[clamp(4rem,9vw,8rem)] border-b border-rule section-reveal ${isVisible ? "is-visible" : ""}`}>
       <div className="max-w-[1280px] mx-auto px-[clamp(1.5rem,5vw,4.5rem)]">
         {/* Section header */}
         <div className="grid grid-cols-[auto_1fr] gap-8 items-end pb-12 border-b border-rule mb-[clamp(2.5rem,5vw,4rem)]">
@@ -109,7 +115,7 @@ export function Experience() {
           {experiences.map((exp, i) => (
             <div
               key={exp.role + exp.period}
-              className={`grid grid-cols-1 md:grid-cols-[220px_1fr] gap-3 md:gap-12 py-10 border-b border-rule transition-colors group hover:bg-paper2 hover:-mx-[clamp(1.5rem,5vw,4.5rem)] hover:px-[clamp(1.5rem,5vw,4.5rem)] ${
+              className={`stagger-child grid grid-cols-1 md:grid-cols-[220px_1fr] gap-3 md:gap-12 py-10 border-b border-rule transition-colors group hover:bg-paper2 hover:-mx-[clamp(1.5rem,5vw,4.5rem)] hover:px-[clamp(1.5rem,5vw,4.5rem)] ${
                 i === 0 ? "border-t" : ""
               }`}
             >

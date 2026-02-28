@@ -1,4 +1,7 @@
+"use client"
+
 import { Mail } from "lucide-react"
+import { useFadeIn } from "@/hooks/use-fade-in"
 
 const links = [
   {
@@ -19,12 +22,14 @@ const links = [
 ]
 
 export function Contact() {
+  const { ref, isVisible } = useFadeIn()
+
   return (
-    <section id="contact" className="py-[clamp(5rem,10vw,10rem)]">
+    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className={`py-[clamp(5rem,10vw,10rem)] section-reveal ${isVisible ? "is-visible" : ""}`}>
       <div className="max-w-[1280px] mx-auto px-[clamp(1.5rem,5vw,4.5rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           {/* Left */}
-          <div>
+          <div className="stagger-child">
             <h2 className="font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] font-black leading-none tracking-tight mb-6">
               {"Let's build"}
               <br />
@@ -47,7 +52,7 @@ export function Contact() {
           </div>
 
           {/* Right */}
-          <div className="pt-2">
+          <div className="stagger-child pt-2">
             <ul className="list-none border-t border-rule">
               {links.map((link) => (
                 <li key={link.label} className="border-b border-rule">
