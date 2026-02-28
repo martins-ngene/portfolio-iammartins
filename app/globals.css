@@ -118,3 +118,39 @@
 .animate-fade-up {
   animation: fadeUp 0.65s ease forwards;
 }
+
+/* Section reveal on scroll */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children inside revealed sections */
+.section-reveal .stagger-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-reveal.is-visible .stagger-child:nth-child(1) { transition-delay: 0.08s; opacity: 1; transform: none; }
+.section-reveal.is-visible .stagger-child:nth-child(2) { transition-delay: 0.16s; opacity: 1; transform: none; }
+.section-reveal.is-visible .stagger-child:nth-child(3) { transition-delay: 0.24s; opacity: 1; transform: none; }
+.section-reveal.is-visible .stagger-child:nth-child(4) { transition-delay: 0.32s; opacity: 1; transform: none; }
+.section-reveal.is-visible .stagger-child:nth-child(5) { transition-delay: 0.40s; opacity: 1; transform: none; }
+.section-reveal.is-visible .stagger-child:nth-child(6) { transition-delay: 0.48s; opacity: 1; transform: none; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal,
+  .section-reveal .stagger-child {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,3 +1,7 @@
+"use client"
+
+import { useFadeIn } from "@/hooks/use-fade-in"
+
 const tags = [
   { label: "TypeScript", highlight: true },
   { label: "GraphQL", highlight: true },
@@ -20,13 +24,16 @@ const stats = [
 ]
 
 export function Hero() {
+  const { ref, isVisible } = useFadeIn({ threshold: 0.1 })
+
   return (
     <section
+      ref={ref as React.RefObject<HTMLElement>}
       id="hero"
-      className="min-h-svh grid grid-cols-1 lg:grid-cols-2 border-b border-rule pt-14"
+      className={`min-h-svh grid grid-cols-1 lg:grid-cols-2 border-b border-rule pt-14 section-reveal ${isVisible ? "is-visible" : ""}`}
     >
       {/* Left */}
-      <div className="border-b lg:border-b-0 lg:border-r border-rule px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] flex flex-col justify-between gap-10">
+      <div className="stagger-child border-b lg:border-b-0 lg:border-r border-rule px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] flex flex-col justify-between gap-10">
         <div>
           <p className="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-fire mb-8">
             Full Stack Engineer &middot; TypeScript &middot; GraphQL &middot; Automation
@@ -87,7 +94,7 @@ export function Hero() {
       </div>
 
       {/* Right */}
-      <div className="hidden lg:flex flex-col justify-end px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] bg-paper2 relative overflow-hidden">
+      <div className="stagger-child hidden lg:flex flex-col justify-end px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] bg-paper2 relative overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute -top-8 -right-8 w-[420px] h-[420px] border border-rule rounded-full opacity-50" />
         <div className="absolute top-8 right-8 w-[320px] h-[320px] border border-rule rounded-full opacity-40" />
