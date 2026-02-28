@@ -91,6 +91,12 @@
   }
 }
 
+/* Hide native cursor on desktop */
+@media (min-width: 769px) {
+  body { cursor: none; }
+  a, button, [role='button'], input, textarea, select { cursor: none; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--paper2); }
