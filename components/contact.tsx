@@ -5,6 +5,11 @@ import { useFadeIn } from "@/hooks/use-fade-in"
 
 const links = [
   {
+    label: "LinkedIn",
+    platform: "linkedin.com/in/martins-ngene",
+    href: "https://www.linkedin.com/in/martins-ngene/",
+  },
+  {
     label: "GitHub",
     platform: "github.com/martins-ngene",
     href: "https://github.com/martins-ngene",
@@ -16,8 +21,8 @@ const links = [
   },
   {
     label: "Email",
-    platform: "hello@martins.dev",
-    href: "mailto:hello@martins.dev",
+    platform: "martinsngene.dev@gmail.com",
+    href: "mailto:martinsngene.dev@gmail.com",
   },
 ]
 

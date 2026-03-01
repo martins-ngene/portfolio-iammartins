@@ -7,7 +7,7 @@ const experiences = [
     period: "Mar 2025 — Present",
     current: true,
     role: "Full Stack Engineer",
-    company: "Travel Tech Company",
+    company: "Ventura TRAVEL",
     location: "Remote",
     bullets: [
       <>
@@ -30,13 +30,13 @@ const experiences = [
         <strong>Hasura GraphQL, webhooks, and async TypeScript handlers</strong>
       </>,
     ],
-    stack: ["TypeScript", "GraphQL", "Hasura", "n8n", "PostgreSQL", "Node.js", "Agentic AI"],
+    stack: ["TypeScript", "Nest.js", "GraphQL", "Hasura", "n8n", "PostgreSQL", "Node.js", "Agentic AI"],
   },
   {
-    period: "2023 — 2025",
+    period: "Sep 2023 — Feb 2025",
     current: false,
-    role: "Software Engineer",
-    company: "Software Product Company",
+    role: "Senior Full Stack Engineer",
+    company: "Software Dynamics Labs",
     location: "Remote",
     bullets: [
       <>
@@ -54,13 +54,13 @@ const experiences = [
         documentation for distributed teams across time zones
       </>,
     ],
-    stack: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    stack: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Ruby", "Ruby on Rails", "Python", "Flask"],
   },
   {
-    period: "2022 — 2023",
+    period: "Oct 2022 — Mar 2023",
     current: false,
-    role: "Frontend Engineer",
-    company: "Early-Stage Startup",
+    role: "Senior Software Engineer (Frontend)",
+    company: "oLab",
     location: "Remote",
     bullets: [
       <>
@@ -75,10 +75,10 @@ const experiences = [
     stack: ["React", "JavaScript", "REST APIs"],
   },
   {
-    period: "2021 — 2022",
+    period: "Oct 2021 — Mar 2022",
     current: false,
-    role: "Frontend Developer",
-    company: "Agency / Consulting",
+    role: "Software Engineer (Frontend)",
+    company: "Kleekit",
     location: "Remote",
     bullets: [
       <>
@@ -91,7 +91,7 @@ const experiences = [
         feedback cycles
       </>,
     ],
-    stack: ["HTML", "CSS", "JavaScript", "React"],
+    stack: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Tailwind CSS"],
   },
 ]
 

@@ -13,18 +13,20 @@ const skillCategories = [
         code with proper interfaces, generics, and null handling built in from the start — code
         {"that's "}
         <strong className="text-foreground font-semibold">
-          built to be understood by the next engineer six months from now
+          built to be understood by the next engineer in the future
         </strong>
-        , not just to compile today. I work in JavaScript (ES2015+) daily, applying modern patterns
+        , not just to compile today. I work in JavaScript daily, applying modern patterns
         like async/await, destructuring, and functional array methods.
       </>
     ),
     tags: [
       { label: "TypeScript", on: true },
       { label: "JavaScript", on: true },
-      { label: "HTML", on: false },
-      { label: "CSS", on: false },
+      { label: "Python", on: false },
+      { label: "Ruby", on: false },
       { label: "SQL", on: false },
+
+     
     ],
   },
   {
@@ -32,7 +34,7 @@ const skillCategories = [
     title: "Frontend Engineering",
     body: (
       <>
-        I build production-grade interfaces with React and Next.js, making deliberate decisions about
+        I build production-grade interfaces with Vue.js, React and Next.js, making deliberate decisions about
         rendering strategies — server-side, static, or client-side —{" "}
         <strong className="text-foreground font-semibold">
           based on performance requirements, not convention
@@ -42,12 +44,15 @@ const skillCategories = [
       </>
     ),
     tags: [
+      { label: "HTML", on: false },
+      { label: "CSS", on: false },
       { label: "React.js", on: true },
       { label: "Next.js", on: true },
+      { label: "Vue.js", on: false },
       { label: "Redux Toolkit", on: false },
       { label: "Tailwind CSS", on: false },
       { label: "Shadcn UI", on: false },
-      { label: "Vue.js", on: false },
+      
     ],
   },
   {
@@ -68,7 +73,13 @@ const skillCategories = [
       { label: "Node.js", on: true },
       { label: "NestJS", on: true },
       { label: "Express.js", on: false },
-      { label: "REST APIs", on: false },
+      { label: "Ruby On Rails", on: false },
+      { label: "Flask", on: false },
+      { label: "API Design & Architecture", on: false },
+      { label: "REST & GraphQL APIs", on: false },
+      { label: "Authentication & Authorization", on: false },
+      { label: "Web Application Security", on: false },
+      { label: "Containerization", on: false },
     ],
   },
   {
@@ -89,12 +100,11 @@ const skillCategories = [
       { label: "Hasura", on: true },
       { label: "Webhooks", on: false },
       { label: "Real-time sync", on: false },
-      { label: "Sanity.io", on: false },
     ],
   },
   {
-    label: "Systems Automation",
-    title: "Systems Automation",
+    label: "Systems Automation & Integration",
+    title: "Systems Automation & Integration",
     body: (
       <>
         The most underrated engineering skill is recognising when a complex manual process is really
@@ -112,11 +122,12 @@ const skillCategories = [
       { label: "Generative AI", on: false },
       { label: "Pipeline Design", on: false },
       { label: "ClickUp API", on: false },
+      { label: "Emails API (MailGun)", on: false },
     ],
   },
   {
-    label: "Database Engineering",
-    title: "Database Engineering",
+    label: "Database Design And Modeling",
+    title: "Database Design And Modeling",
     body: (
       <>
         I think about data models before I think about code — because{" "}
@@ -173,9 +184,9 @@ const skillCategories = [
     tags: [
       { label: "Technical Docs", on: false },
       { label: "System Design", on: false },
-      { label: "EF C2 English", on: false },
-      { label: "IELTS 7.5", on: false },
-      { label: "Remote-first", on: false },
+      { label: "EF SET C2 English", on: false },
+      { label: "IELTS Academic 7.5", on: false },
+      { label: "Async-first communication", on: false },
     ],
   },
 ]

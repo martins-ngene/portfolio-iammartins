@@ -2,7 +2,7 @@
 
 import { useFadeIn } from "@/hooks/use-fade-in"
 
-const footerChips = ["Next.js", "Sanity.io", "TypeScript", "Vercel"]
+const footerChips = ["Next.js", "TypeScript", "Vercel"]
 
 export function Footer() {
   const { ref, isVisible } = useFadeIn({ threshold: 0.3 })

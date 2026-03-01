@@ -9,11 +9,12 @@ const tags = [
   { label: "React", highlight: false },
   { label: "Next.js", highlight: false },
   { label: "Node.js", highlight: false },
-  { label: "n8n", highlight: false },
+  { label: "n8n / Make", highlight: false },
   { label: "PostgreSQL", highlight: false },
   { label: "Docker", highlight: false },
   { label: "NestJS", highlight: false },
   { label: "Agentic AI", highlight: false },
+  { label: "Generative AI", highlight: false },
   { label: "CI/CD", highlight: false },
 ]
 
@@ -36,16 +37,16 @@ export function Hero() {
       <div className="stagger-child border-b lg:border-b-0 lg:border-r border-rule px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] flex flex-col justify-between gap-10">
         <div>
           <p className="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-fire mb-8">
-            Full Stack Engineer &middot; TypeScript &middot; GraphQL &middot; Automation
+            Full Stack Engineer &middot; Frontend &middot; Backend &middot; Automation
           </p>
           <h1 className="font-serif text-[clamp(3rem,6.5vw,6rem)] leading-none font-black tracking-tight text-foreground mb-6">
-            I build things
+            I build systems
             <br />
             {"that "}
             <em className="italic font-normal text-fire">
-              actually
+              scale
               <br />
-              work.
+              seamlessly.
             </em>
           </h1>
           <p className="text-base text-ink3 leading-relaxed max-w-[440px] mb-10">
