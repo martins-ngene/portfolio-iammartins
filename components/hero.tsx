@@ -18,7 +18,7 @@ const tags = [
 ]
 
 const stats = [
-  { num: "4+", label: "Years building" },
+  { num: "5+", label: "Years building" },
   { num: "25h", label: "Saved weekly via automation" },
   { num: "8", label: "Core skill domains" },
 ]
