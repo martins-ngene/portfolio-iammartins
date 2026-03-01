@@ -79,7 +79,7 @@ const experiences = [
     current: false,
     role: "Software Engineer (Frontend)",
     company: "Kleekit",
-    location: "Remote",
+    location: "Hybrid",
     bullets: [
       <>
         Delivered client-facing web projects across multiple industries under tight delivery

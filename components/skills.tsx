@@ -44,10 +44,10 @@ const skillCategories = [
       </>
     ),
     tags: [
-      { label: "HTML", on: false },
-      { label: "CSS", on: false },
       { label: "React.js", on: true },
       { label: "Next.js", on: true },
+      { label: "HTML", on: false },
+      { label: "CSS", on: false },
       { label: "Vue.js", on: false },
       { label: "Redux Toolkit", on: false },
       { label: "Tailwind CSS", on: false },
