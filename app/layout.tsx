@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: 'Martins — Full Stack Engineer',
   description:
     'Full Stack Engineer specialising in TypeScript, GraphQL, automation systems, and modern web architecture.',
+  icons: {
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
+  },
 }
 
 export const viewport: Viewport = {
