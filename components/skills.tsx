@@ -170,6 +170,28 @@ const skillCategories = [
     ],
   },
   {
+    label: "AI Tooling & LLMs",
+    title: "AI Tooling & LLMs",
+    body: (
+      <>
+        Claude, Cursor, and v0 are tools I use to eliminate toil, not to follow trends. {"I've"} built
+        prompt-driven pipelines, wired LLMs into event-driven workflows that replace hours of manual
+        work, and used AI-assisted development to ship faster without cutting corners.{" "}
+        <strong className="text-foreground font-semibold">
+          The best automation is the one nobody notices.
+        </strong>
+      </>
+    ),
+    tags: [
+      { label: "Claude AI", on: true },
+      { label: "Cursor", on: true },
+      { label: "v0", on: true },
+      { label: "ChatGPT", on: false },
+      { label: "Prompt Engineering", on: false },
+      { label: "LLM APIs", on: false },
+    ],
+  },
+  {
     label: "Technical Communication",
     title: "Technical Communication",
     body: (
