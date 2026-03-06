@@ -21,7 +21,7 @@ const tags = [
 const stats = [
   { num: "5+", label: "Years building" },
   { num: "25h", label: "Saved weekly via automation" },
-  { num: "8", label: "Core skill domains" },
+  { num: "9", label: "Core skill domains" },
 ]
 
 export function Hero() {

@@ -97,6 +97,7 @@ const skillCategories = [
     ),
     tags: [
       { label: "GraphQL", on: true },
+      { label: "Apollo Client", on: true },
       { label: "Hasura", on: true },
       { label: "Webhooks", on: false },
       { label: "Real-time sync", on: false },
