@@ -18,7 +18,7 @@ export function Navbar() {
       <a href="#hero" className="font-serif text-lg font-bold tracking-tight text-foreground">
         Martins
         <sup className="font-mono text-[0.55rem] font-normal text-fire align-super tracking-wider">
-          FSE
+          SWE
         </sup>
       </a>
 
