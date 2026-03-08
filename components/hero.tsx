@@ -37,7 +37,7 @@ export function Hero() {
       <div className="stagger-child border-b lg:border-b-0 lg:border-r border-rule px-[clamp(1.5rem,5vw,4.5rem)] py-[clamp(3rem,8vw,7rem)] flex flex-col justify-between gap-10">
         <div>
           <p className="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-fire mb-8">
-            Full Stack Engineer &middot; Frontend &middot; Backend &middot; Automation
+            Martins Ngene &middot; Full Stack Engineer
           </p>
           <h1 className="font-serif text-[clamp(3rem,6.5vw,6rem)] leading-none font-black tracking-tight text-foreground mb-6">
             I build systems
