@@ -217,6 +217,7 @@ const skillCategories = [
 
 export function Skills() {
   const [activeIdx, setActiveIdx] = useState(0)
+  const [mobileOpenIdx, setMobileOpenIdx] = useState<number | null>(null)
   const active = skillCategories[activeIdx]
   const { ref, isVisible } = useFadeIn()
 
@@ -238,19 +239,19 @@ export function Skills() {
           {skillCategories.map((cat, i) => (
             <div key={cat.label} className={i > 0 ? "border-t border-rule" : ""}>
               <button
-                onClick={() => setActiveIdx(activeIdx === i ? -1 : i)}
+                onClick={() => setMobileOpenIdx(mobileOpenIdx === i ? null : i)}
                 className="w-full flex items-center justify-between gap-3 py-4 px-5 cursor-pointer transition-colors text-left hover:bg-paper2"
-                aria-expanded={activeIdx === i}
+                aria-expanded={mobileOpenIdx === i}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-2 h-2 rounded-full shrink-0 transition-colors ${
-                      activeIdx === i ? "bg-fire" : "bg-rule"
+                      mobileOpenIdx === i ? "bg-fire" : "bg-rule"
                     }`}
                   />
                   <span
                     className={`text-sm font-semibold transition-colors ${
-                      activeIdx === i ? "text-foreground" : "text-ink3"
+                      mobileOpenIdx === i ? "text-foreground" : "text-ink3"
                     }`}
                   >
                     {cat.label}
@@ -258,13 +259,13 @@ export function Skills() {
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 text-ink3 transition-transform duration-300 ${
-                    activeIdx === i ? "rotate-180" : ""
+                    mobileOpenIdx === i ? "rotate-180" : ""
                   }`}
                 />
               </button>
               <div
                 className={`grid transition-all duration-300 ease-out ${
-                  activeIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  mobileOpenIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
