@@ -120,6 +120,7 @@ CREATE TABLE reservations (
 
 export function Philosophy() {
   const [activeIdx, setActiveIdx] = useState(0)
+  const [mobileOpenIdx, setMobileOpenIdx] = useState<number | null>(null)
   const detail = philosophies[activeIdx]
   const { ref, isVisible } = useFadeIn()
 
@@ -141,11 +142,11 @@ export function Philosophy() {
           {philosophies.map((phil, i) => (
             <div key={phil.num} className="border-b border-ink2">
               <button
-                onClick={() => setActiveIdx(activeIdx === i ? -1 : i)}
+                onClick={() => setMobileOpenIdx(mobileOpenIdx === i ? null : i)}
                 className={`w-full flex items-center justify-between gap-4 py-5 px-4 cursor-pointer transition-colors text-left ${
-                  activeIdx === i ? "bg-[#111]" : "hover:bg-[#161616]"
+                  mobileOpenIdx === i ? "bg-[#111]" : "hover:bg-[#161616]"
                 }`}
-                aria-expanded={activeIdx === i}
+                aria-expanded={mobileOpenIdx === i}
               >
                 <div className="flex items-start gap-3 min-w-0">
                   <span className="font-mono text-[0.55rem] text-fire2 tracking-[0.15em] opacity-60 shrink-0 pt-1">
@@ -153,7 +154,7 @@ export function Philosophy() {
                   </span>
                   <span
                     className={`font-serif text-sm italic leading-snug transition-colors ${
-                      activeIdx === i ? "text-paper" : "text-[#aaa]"
+                      mobileOpenIdx === i ? "text-paper" : "text-[#aaa]"
                     }`}
                   >
                     {phil.cardTitle}
@@ -161,13 +162,13 @@ export function Philosophy() {
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 text-ink4 shrink-0 transition-transform duration-300 ${
-                    activeIdx === i ? "rotate-180" : ""
+                    mobileOpenIdx === i ? "rotate-180" : ""
                   }`}
                 />
               </button>
               <div
                 className={`grid transition-all duration-300 ease-out ${
-                  activeIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  mobileOpenIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
