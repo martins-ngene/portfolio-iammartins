@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useFadeIn } from "@/hooks/use-fade-in"
+import { ChevronDown } from "lucide-react"
 
 const philosophies = [
   {
@@ -135,8 +136,63 @@ export function Philosophy() {
           </h2>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink2">
+        {/* Mobile Accordion */}
+        <div className="md:hidden flex flex-col border-t border-ink2">
+          {philosophies.map((phil, i) => (
+            <div key={phil.num} className="border-b border-ink2">
+              <button
+                onClick={() => setActiveIdx(activeIdx === i ? -1 : i)}
+                className={`w-full flex items-center justify-between gap-4 py-5 px-4 cursor-pointer transition-colors text-left ${
+                  activeIdx === i ? "bg-[#111]" : "hover:bg-[#161616]"
+                }`}
+                aria-expanded={activeIdx === i}
+              >
+                <div className="flex items-start gap-3 min-w-0">
+                  <span className="font-mono text-[0.55rem] text-fire2 tracking-[0.15em] opacity-60 shrink-0 pt-1">
+                    {phil.num}
+                  </span>
+                  <span
+                    className={`font-serif text-sm italic leading-snug transition-colors ${
+                      activeIdx === i ? "text-paper" : "text-[#aaa]"
+                    }`}
+                  >
+                    {phil.cardTitle}
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`w-4 h-4 text-ink4 shrink-0 transition-transform duration-300 ${
+                    activeIdx === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  activeIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-4 pb-6 pt-1 bg-[#0D0D0D]">
+                    <div className="text-sm text-[#888] leading-relaxed mb-5">
+                      {phil.body.map((p, j) => (
+                        <p key={j} className="mb-3 last:mb-0">
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                    <div className="bg-[#0A0A0A] border border-[#222] border-l-2 border-l-fire p-4 overflow-x-auto">
+                      <pre className="font-mono text-[0.65rem] leading-relaxed text-[#7a8a9a] whitespace-pre-wrap">
+                        {phil.code}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Cards grid */}
+        <div className="hidden md:grid grid-cols-2 gap-px bg-ink2">
           {philosophies.map((phil, i) => (
             <button
               key={phil.num}
@@ -161,10 +217,10 @@ export function Philosophy() {
           ))}
         </div>
 
-        {/* Detail panel */}
+        {/* Desktop Detail panel */}
         <div
           key={activeIdx}
-          className="bg-[#0D0D0D] p-8 md:p-12 mt-px animate-fade-slide-in"
+          className="hidden md:block bg-[#0D0D0D] p-8 md:p-12 mt-px animate-fade-slide-in"
         >
           <h3 className="font-serif text-[clamp(1.4rem,3vw,2rem)] font-bold text-paper italic mb-6">
             {detail.title}

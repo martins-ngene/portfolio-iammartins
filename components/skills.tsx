@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useFadeIn } from "@/hooks/use-fade-in"
+import { ChevronDown } from "lucide-react"
 
 const skillCategories = [
   {
@@ -232,18 +233,77 @@ export function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-16">
+        {/* Mobile Accordion */}
+        <div className="lg:hidden flex flex-col gap-0 border border-rule">
+          {skillCategories.map((cat, i) => (
+            <div key={cat.label} className={i > 0 ? "border-t border-rule" : ""}>
+              <button
+                onClick={() => setActiveIdx(activeIdx === i ? -1 : i)}
+                className="w-full flex items-center justify-between gap-3 py-4 px-5 cursor-pointer transition-colors text-left hover:bg-paper2"
+                aria-expanded={activeIdx === i}
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`w-2 h-2 rounded-full shrink-0 transition-colors ${
+                      activeIdx === i ? "bg-fire" : "bg-rule"
+                    }`}
+                  />
+                  <span
+                    className={`text-sm font-semibold transition-colors ${
+                      activeIdx === i ? "text-foreground" : "text-ink3"
+                    }`}
+                  >
+                    {cat.label}
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`w-4 h-4 text-ink3 transition-transform duration-300 ${
+                    activeIdx === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  activeIdx === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-5 pb-5 pt-1">
+                    <p className="text-sm text-ink3 leading-relaxed mb-5">{cat.body}</p>
+                    <div className="flex flex-wrap gap-[0.4rem]">
+                      {cat.tags.map((tag) => (
+                        <span
+                          key={tag.label}
+                          className={
+                            tag.on
+                              ? "font-mono text-[0.6rem] px-2 py-1 bg-ink text-paper border border-ink tracking-wider"
+                              : "font-mono text-[0.6rem] px-2 py-1 bg-paper border border-rule text-ink3 tracking-wider"
+                          }
+                        >
+                          {tag.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid grid-cols-[280px_1fr] gap-16">
           {/* Nav */}
           <nav
-            className="lg:sticky lg:top-[calc(56px+2rem)] self-start flex flex-wrap lg:flex-col gap-0 border border-rule lg:border-0"
+            className="sticky top-[calc(56px+2rem)] self-start flex flex-col gap-0"
             aria-label="Skill categories"
           >
             {skillCategories.map((cat, i) => (
               <button
                 key={cat.label}
                 onClick={() => setActiveIdx(i)}
-                className={`flex items-center gap-3 py-3 px-4 lg:px-0 lg:border-b border-r lg:border-r-0 border-rule cursor-pointer transition-colors text-left ${
-                  i === 0 ? "lg:border-t" : ""
+                className={`flex items-center gap-3 py-3 border-b border-rule cursor-pointer transition-colors text-left ${
+                  i === 0 ? "border-t" : ""
                 }`}
               >
                 <div
