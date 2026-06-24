@@ -48,11 +48,11 @@ export function Contact() {
               {"I'm open to senior engineering roles, interesting consulting work, and conversations worth having."}
             </p>
             <a
-              href="mailto:martinsngene.dev@gmail.com"
+              href="mailto:contact@iammartins.com"
               className="inline-flex items-center gap-3 font-mono text-[0.9rem] text-foreground border-b-2 border-fire pb-1 transition-colors hover:text-fire"
             >
               <Mail size={16} />
-              martinsngene.dev@gmail.com
+              contact@iammartins.com
             </a>
           </div>
 
