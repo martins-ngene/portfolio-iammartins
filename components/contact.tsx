@@ -21,8 +21,8 @@ const links = [
   },
   {
     label: "Email",
-    platform: "martinsngene.dev@gmail.com",
-    href: "mailto:martinsngene.dev@gmail.com",
+    platform: "contact@iammartins.com",
+    href: "mailto:contact@iammartins.com",
   },
 ]
 
