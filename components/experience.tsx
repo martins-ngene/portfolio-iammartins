@@ -35,7 +35,7 @@ const experiences = [
   {
     period: "Sep 2023 — Feb 2025",
     current: false,
-    role: "Founder & Senior Full Stack Engineer",
+    role: "Founder & Senior Software Engineer",
     company: "FlowKeit",
     location: "Remote",
     bullets: [
